@@ -13,7 +13,7 @@ function App() {
     // </BrowserRouter>
     // <Home/>
     // <AccessibilitySettings/>
-    <ManualSkinTone/>
+    <AccessibilitySettings/>
   );
 }
 
