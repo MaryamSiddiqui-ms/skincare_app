@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import home_img from '../../assets/home_img.jpg'
+import {Button} from './../../components';
 
 function Home() {
   const [companyTitle, setCompanyTitle] = useState('TEST'); // Set default company title
@@ -21,7 +22,8 @@ function Home() {
       <img src={home_img} />
       <p>Login with social account</p> 
       
-      <button onClick={handleSendOTP}>Send OTP</button>
+      
+      <Button txt="Send OTP" theme='dark' />
     </div>
   );
 }

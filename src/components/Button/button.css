@@ -1,0 +1,17 @@
+.btn{
+    width: 180px;
+    height: 64px;
+
+    font-family: 'Montserrat';
+    font-family: normal;
+    font-size: 1.2rem;
+    line-height: 17px;
+    text-align: center;
+
+    border: 1px solid rgb(187, 185, 185);
+    border-radius: 5px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
