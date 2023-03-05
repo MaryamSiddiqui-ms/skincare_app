@@ -7,37 +7,45 @@ import RadioGroup from '@mui/material/RadioGroup';
 import {Button} from './../../components';
 import Grid from '@mui/material/Grid';
 import './FilterSettings.css'
-function ManualSkinTone() {
+
+function ManualSkinTone({ options }) {
+    const [value, setValue] = React.useState('African American');
+
+    const handleChange = (event) => {
+      setValue(event.target.value);
+    };
 
   return (
-    <div style = {{position:'relative' , height:'100vh'}}>
-      <h1>Select Your skin Type</h1>
+    <div style={{ position: 'relative', height: '100vh' }}>
+      <h1>Select Your Skin Type</h1>
       <FormControl>
-        <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
+        <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
         <RadioGroup
-            aria-labelledby="demo-radio-buttons-group-label"
-            defaultValue="African American"
-            name="radio-buttons-group"
+          aria-labelledby="demo-controlled-radio-buttons-group"
+          name="controlled-radio-buttons-group"
+          value={value}
+          onChange={handleChange}
         >
-            <FormControlLabel value="White" control={<Radio />} label="White" />
-            <FormControlLabel value="Asian" control={<Radio />} label="Asian" />
-            <FormControlLabel value="African American" control={<Radio />} label="African American" />
-            <FormControlLabel value="American Indian Or Alaska Native" control={<Radio />} label="American Indian Or Alaska Native" />
-            <FormControlLabel value="Native Hawaiian Or Other Pacific Islander" control={<Radio />} label="Native Hawaiian Or Other Pacific Islander" />
-
+          {options.map((option) => (
+            <FormControlLabel
+              key={option.value}
+              value={option.value}
+              control={<Radio />}
+              label={option.label}
+            />
+          ))}
         </RadioGroup>
-
-    </FormControl>
-    <div className='setting_BTN'>
-    <Grid container justifyContent="space-between" >
-        <Grid item>
-          <Button txt="Skip" theme='light' variant="contained"/>
+      </FormControl>
+      <div className='setting_BTN'>
+        <Grid container justifyContent="space-between" >
+          <Grid item>
+            <Button txt="Skip" theme='light' variant="contained"/>
+          </Grid>
+          <Grid item>
+            <Button txt="Apply" theme='dark' variant='contained'/>
+          </Grid>
         </Grid>
-        <Grid item>
-        <Button txt="Apply" theme='dark' variant="contained"/>
-        </Grid>
-      </Grid>
-    </div>
+      </div>
     </div>
   );
 }
