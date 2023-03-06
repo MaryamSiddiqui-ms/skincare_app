@@ -1,0 +1,22 @@
+.input-field-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.icon-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: gray;
+}
+
+.otp-btn-container{
+    margin: 30px 15px;
+}
+
+.lower-home{
+    background-color: #fbfbfb;
+    padding: 30px 10px
+}
