@@ -6,7 +6,7 @@ import MButton from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-
+import { useNavigate } from 'react-router-dom';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -20,6 +20,7 @@ const style = {
 };
 
 function AutoFilter() {
+  const navigate = useNavigate();
   // Mock service to return sample values for skinTone and skinCondition
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -116,7 +117,7 @@ function AutoFilter() {
         </Box>
       </Modal>
     </div>
-      <div style={{ marginTop: "2rem" }}>
+      <div style={{ marginTop: "2rem" }} onClick={() =>navigate('/skin-tone')}>
         <Button txt="Set Manual Filter" theme="dark" variant="contained" onClick={() => console.log("Go to screen 4")} />
       </div>
     </div>

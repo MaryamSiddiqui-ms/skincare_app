@@ -16,15 +16,17 @@ function ManualSkinTone({ options }) {
     };
 
   return (
-    <div style={{ position: 'relative', height: '100vh' }}>
-      <h1>Select Your Skin Type</h1>
-      <FormControl>
+    <div className="skin-tone-screen" style={{ position: 'relative', height: '100vh' }}>
+      <h1 className="skin-tone-heading">Select Your Skin Type</h1>
+      <FormControl sx={{ padding: '5px 12px'}}>
+
         <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
         <RadioGroup
           aria-labelledby="demo-controlled-radio-buttons-group"
           name="controlled-radio-buttons-group"
           value={value}
           onChange={handleChange}
+          color="default"
         >
           {options.map((option) => (
             <FormControlLabel
@@ -36,15 +38,9 @@ function ManualSkinTone({ options }) {
           ))}
         </RadioGroup>
       </FormControl>
-      <div className='setting_BTN'>
-        <Grid container justifyContent="space-between" >
-          <Grid item>
-            <Button txt="Skip" theme='light' variant="contained"/>
-          </Grid>
-          <Grid item>
-            <Button txt="Apply" theme='dark' variant='contained'/>
-          </Grid>
-        </Grid>
+      <div className='setting_BTN' >
+        <Button width="44.5%" txt="Skip" theme='light' variant="contained"/>
+        <Button width="44.5%" txt="Apply" theme='dark' variant='contained'/>
       </div>
     </div>
   );

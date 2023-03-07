@@ -9,7 +9,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import "@fontsource/montserrat";
-
+import { useNavigate } from 'react-router-dom'
 import { fontFamily } from '@mui/system';
 
 const countries = [
@@ -21,6 +21,7 @@ const countries = [
 
 
 function Home() {
+  const navigate = useNavigate()
   const [companyTitle, setCompanyTitle] = useState('T E S T'); // Set default company title
   const [companySubTitle, setCompanySubTitle] = useState('C O M P A N I E S'); // Set default company title
   const [country, setCountry] = useState('USD');
@@ -78,21 +79,29 @@ function Home() {
               }}
             />
           </div> 
-          <div className='otp-btn-container'>
+          <div className='otp-btn-container' onClick={() =>navigate('/accessibility')}>
             <Button txt="Send OTP" theme='dark' />
           </div>
           <div className="dashed-line">
             <span
-              style={{fontSize: '1.2rem', color: 'gray',  fontFamily: 'Montserrat'}}
+              style={{fontSize: '1.2rem', color: 'gray'}}
             >
               Or login with
             </span>
           </div>
           <div className='icon-container'>
-            <AppleIcon sx = {{margin: '20px 10px', border: '1px solid gray', padding: '5px', borderRadius: '5px'}} />
-            <FacebookIcon sx = {{margin: '20px 10px', border: '1px solid gray', padding: '5px', borderRadius: '5px'}} />
-            <GoogleIcon sx = {{margin: '20px 10px', border: '1px solid gray', padding: '5px', borderRadius: '5px'}} />
-            <TwitterIcon sx = {{margin: '20px 10px', border: '1px solid gray', padding: '5px', borderRadius: '5px'}} />
+            <AppleIcon sx = {{margin: '20px 10px', border: '1px solid gray', padding: '5px', borderRadius: '5px'}}
+              onClick={() =>navigate('/accessibility')}
+            />
+            <FacebookIcon sx = {{margin: '20px 10px', border: '1px solid gray', padding: '5px', borderRadius: '5px'}}
+              onClick={() =>navigate('/accessibility')}
+            />
+            <GoogleIcon sx = {{margin: '20px 10px', border: '1px solid gray', padding: '5px', borderRadius: '5px'}}
+              onClick={() =>navigate('/accessibility')}
+            />
+            <TwitterIcon sx = {{margin: '20px 10px', border: '1px solid gray', padding: '5px', borderRadius: '5px'}}
+              onClick={() =>navigate('/accessibility')}
+            />
           </div>
         </div>
       </div>
