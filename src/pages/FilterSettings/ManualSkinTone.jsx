@@ -13,11 +13,13 @@ function ManualSkinTone({ options }) {
 
   const navigate = useNavigate()
 
-  const [value, setValue] = React.useState('African American');
+  const [value, setValue] = React.useState('');
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
+  const isButtonDisabled = value === '';
 
   return (
     <div className="filter-screen" style={{ position: 'relative', height: '100vh' }}>
@@ -30,6 +32,7 @@ function ManualSkinTone({ options }) {
           name="controlled-radio-buttons-group"
           value={value}
           onChange={handleChange}
+          olor="default"
         >
           {options.map((option) => (
             <FormControlLabel
@@ -48,7 +51,7 @@ function ManualSkinTone({ options }) {
       </FormControl>
       <div className='setting_BTN' onClick={() =>navigate('/skin-condition')}>
         <Button width="44.5%" txt="Skip" theme='light' variant="contained"/>
-        <Button width="44.5%" txt="Apply" theme='dark' variant='contained'/>
+        <Button width="44.5%" txt="Apply" theme='dark' variant='contained' disabled={isButtonDisabled}/>
       </div>
     </div>
   );

@@ -4,10 +4,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import {Button} from './../../components';
 import './AccessibilitySettings.css'
-import Grid from '@mui/material/Grid';
-import TextSizeSelection from './TextSizeSelection'
 import "@fontsource/montserrat";
-import { fontFamily } from "@mui/system";
 import { useNavigate } from 'react-router-dom';
 
 function AccessibilitySettings() {

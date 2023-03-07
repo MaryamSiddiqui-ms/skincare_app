@@ -2,8 +2,13 @@ import React from 'react';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import './product-listing.css'
-import headerImage from '../../assets/1.jpg'
-import anotherImage from '../../assets/home_img.jpg'
+import _8 from '../../assets/8.jpg'
+import _1 from '../../assets/2.jpg'
+import _3 from '../../assets/3.jpg'
+import _4 from '../../assets/4.jpg'
+import _5 from '../../assets/5.jpg'
+import _6 from '../../assets/6.jpg'
+import _7 from '../../assets/7.jpg'
 import { useNavigate } from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
@@ -20,19 +25,19 @@ function ProductListing(props){
     var cosmetics = [
         [
             'Parkinson Cosmetic',
-            headerImage,
+            _5,
             '$7',
             'Lorum Ispum Name',
-            headerImage,
+            _4,
             '$7',
             'Lorum Ispum Name',
         ],
         [
             'Concealer',
-            anotherImage,
+            _3,
             '$7',
             'Lorum Ispum Name',
-            anotherImage,
+            _1,
             '$7',
             'Lorum Ispum Name',
         ]
@@ -61,7 +66,7 @@ function ProductListing(props){
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={skinType}
-                onChange={handleChange}
+                onChange={_8}
             >
                 {
                     props.options.map(value => {
@@ -74,10 +79,10 @@ function ProductListing(props){
 
             <h2 style={{marginBottom: '5px'}}>Cosmetic Reccomendation</h2>
             <Image 
-                img={headerImage}
+                img={_8}
                 height="230px"
                 width="380px"
-                contentDetails="Cosmetic Bunder - Save 45%"
+                contentDetails="Cosmetic Bundle - Save 45%"
             />
 
             <div>
