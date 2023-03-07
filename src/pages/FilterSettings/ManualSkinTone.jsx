@@ -42,6 +42,7 @@ function ManualSkinTone({ options }) {
                 paddingTop: '10px',
                 borderBottom: '1px solid rgb(224, 224, 224)'
               }}
+              checked={option.label === "African American" ? true : false}
             />
           ))}
         </RadioGroup>
