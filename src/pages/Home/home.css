@@ -1,7 +1,16 @@
+body{
+    font-family: 'Montserrat';     
+}
+
+.home-screen{
+    position: relative;
+    padding: 5px 12px;
+}
+
 .input-field-container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -13,10 +22,56 @@
 }
 
 .otp-btn-container{
-    margin: 30px 15px;
+    margin: 30px 0;
 }
 
 .lower-home{
     background-color: #fbfbfb;
     padding: 30px 10px
+}
+
+.company-title-wrapper{
+    position: relative;
+}
+
+.company-title{
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%, 40%);
+}
+
+.bottom-section{
+    margin-top: 200px;
+}
+
+.compnay-title-heading{
+    font-size: 2.5rem;
+
+}
+
+.dashed-line {
+    line-height: 0.5;
+    text-align: center;
+}
+.dashed-line span {
+    display: inline-block;
+    position: relative;  
+}
+.dashed-line span:before,
+.dashed-line span:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    top: 0;
+    width: 75%;
+}
+.dashed-line span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+.dashed-line span:after {
+    left: 100%;
+    margin-left: 15px;
 }

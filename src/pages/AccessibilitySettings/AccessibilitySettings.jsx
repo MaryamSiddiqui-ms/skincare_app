@@ -9,6 +9,12 @@ import TextSizeSelection from './TextSizeSelection'
 
 function AccessibilitySettings() {
 
+  const [textBgSm, setTextBgSm] = useState("none");
+  const [textBgMd, setTextBgMd] = useState("none");
+  const [textBgLg, setTextBgLg] = useState("none");
+
+ 
+
   return (
     <div style = {{position:'relative' , height:'100vh'}}>
       <h1>Accessibility Settings</h1>
@@ -19,12 +25,14 @@ function AccessibilitySettings() {
         <FormControlLabel control={<Switch defaultChecked size="small" color="default"/>} label="Bold Text" />
       </FormGroup>
 
+
+
       <div className='text-size-container'>
           <p style={{color: 'black'}}>Select Text Size</p>
           <div className="font-containers">
-            <div className='small'>A</div>
-            <div className='medium'>A</div>
-            <div className='large'>A</div>
+            <div onClick={() => {setTextBgSm("#eef5ff")}} style={{backgroundColor: textBgSm}} className='small'>A</div>
+            <div onClick={() => setTextBgMd("#eef5ff")} style={{backgroundColor: textBgMd}} className='medium'>A</div>
+            <div onClick={() => setTextBgLg("#eef5ff")} style={{backgroundColor: textBgLg}} className='large'>A</div>
           </div>
       </div>
 
