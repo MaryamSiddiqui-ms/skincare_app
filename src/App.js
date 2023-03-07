@@ -12,12 +12,12 @@ function App() {
     //   </Routes>
     // </BrowserRouter>
     // <Home/>
-    // <AccessibilitySettings/>
+    <AccessibilitySettings/>
     // <SkinTone
     // options={[    { label: 'White', value: 'white' },    { label: 'Asian', value: 'asian' },    { label: 'African American', value: 'african-american' },    { label: 'American Indian or Alaska Native', value: 'native-american' },    { label: 'Native Hawaiian or Other Pacific Islander', value: 'pacific-islander' },  ]}
     // />
     // <SkinConditions/>
-    <AutoFilter/>
+    // <AutoFilter/>
   );
 }
 

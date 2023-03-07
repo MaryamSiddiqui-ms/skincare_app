@@ -1,15 +1,18 @@
 .setting_BTN {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   right: 0;
   padding: 10px;
 }
 
 .text-size-container{
-  width: 100%;
+  font-family: 'Gotham';
+  margin: 20px ;
+  width: 90%;
   height: 130px;
-  border: 1px solid rgb(207, 206, 206);
+  
+  /* border: 1px solid rgb(207, 206, 206); */
   /* border: 1px solid rgb(233, 233, 233); */
 }
 
@@ -20,6 +23,7 @@
 }
 
 .text-size-container > p{
+  font-family: 'Gotham';
   font-size: 1.2rem;
   margin-left: 25px;
   margin-top: 10px;
@@ -32,7 +36,6 @@
   width: 80px;
   height: 50px;
   text-align: center;
-
 }
 
 .small{
@@ -47,3 +50,30 @@
   font-size: 2.5rem;
 }
   
+.Accessibility_heading{
+  font-size: large;
+  text-align: left;
+  margin-top: 30px;
+  padding: 10px;
+  flex-direction: row;
+  line-height: 18.23px
+}
+
+.Accessibility_body{
+  padding-left: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 325;
+  font-size: 11.6019px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #2B2929;
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+  
+
+}

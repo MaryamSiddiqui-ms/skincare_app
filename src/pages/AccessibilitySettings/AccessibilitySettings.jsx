@@ -6,21 +6,30 @@ import {Button} from './../../components';
 import './AccessibilitySettings.css'
 import Grid from '@mui/material/Grid';
 import TextSizeSelection from './TextSizeSelection'
+import "@fontsource/montserrat";
+import { fontFamily } from "@mui/system";
 
 function AccessibilitySettings() {
 
   return (
     <div style = {{position:'relative' , height:'100vh'}}>
-      <h1>Accessibility Settings</h1>
-      <FormGroup>
-        <FormControlLabel control={<Switch defaultChecked size="small" color="default"/>} label="Text To Speech" />
-        <FormControlLabel control={<Switch defaultChecked size="small" color="default"/>} label="Zoom" />
-        <FormControlLabel control={<Switch defaultChecked size="small" color="default"/>} label="Auto-Focus" />
-        <FormControlLabel control={<Switch defaultChecked size="small" color="default"/>} label="Bold Text" />
-      </FormGroup>
-
+      <h1 className='Accessibility_heading' style={{fontFamily:'montserrat'}} ><b>Accessibility Settings</b></h1>
+      <div style={{marginLeft:30}}>
+      <div className="Accessibility_body">
+        <FormControlLabel control={<Switch defaultChecked size="small" color="default" disabled/>} label="Text To Speech" />
+      </div>
+      <div className="Accessibility_body">
+        <FormControlLabel control={<Switch defaultChecked size="small" color="default" disabled/>} label="Zoom" />
+      </div>
+      <div className="Accessibility_body">
+        <FormControlLabel control={<Switch defaultChecked size="small" color="default" disabled/>} label="Auto-Focus" />
+      </div>
+      <div className="Accessibility_body">
+        <FormControlLabel control={<Switch defaultChecked size="small" color="default" disabled/>} label="Bold Text" />
+      </div>
+      </div>
       <div className='text-size-container'>
-          <p style={{color: 'black'}}>Select Text Size</p>
+          <p style={{color: '#2B2929'}}>Select Text Size</p>
           <div className="font-containers">
             <div className='small'>A</div>
             <div className='medium'>A</div>
