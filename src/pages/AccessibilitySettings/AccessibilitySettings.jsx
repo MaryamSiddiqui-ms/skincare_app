@@ -11,6 +11,12 @@ import { fontFamily } from "@mui/system";
 
 function AccessibilitySettings() {
 
+  const [textBgSm, setTextBgSm] = useState("none");
+  const [textBgMd, setTextBgMd] = useState("none");
+  const [textBgLg, setTextBgLg] = useState("none");
+
+ 
+
   return (
     <div style = {{position:'relative' , height:'100vh'}}>
       <h1 className='Accessibility_heading' style={{fontFamily:'montserrat'}} ><b>Accessibility Settings</b></h1>
@@ -28,12 +34,22 @@ function AccessibilitySettings() {
         <FormControlLabel control={<Switch defaultChecked size="small" color="default" disabled/>} label="Bold Text" />
       </div>
       </div>
+      <h1>Accessibility Settings</h1>
+      <FormGroup>
+        <FormControlLabel control={<Switch defaultChecked size="small" color="default"/>} label="Text To Speech" />
+        <FormControlLabel control={<Switch defaultChecked size="small" color="default"/>} label="Zoom" />
+        <FormControlLabel control={<Switch defaultChecked size="small" color="default"/>} label="Auto-Focus" />
+        <FormControlLabel control={<Switch defaultChecked size="small" color="default"/>} label="Bold Text" />
+      </FormGroup>
+
+
+
       <div className='text-size-container'>
           <p style={{color: '#2B2929'}}>Select Text Size</p>
           <div className="font-containers">
-            <div className='small'>A</div>
-            <div className='medium'>A</div>
-            <div className='large'>A</div>
+            <div onClick={() => {setTextBgSm("#eef5ff")}} style={{backgroundColor: textBgSm}} className='small'>A</div>
+            <div onClick={() => setTextBgMd("#eef5ff")} style={{backgroundColor: textBgMd}} className='medium'>A</div>
+            <div onClick={() => setTextBgLg("#eef5ff")} style={{backgroundColor: textBgLg}} className='large'>A</div>
           </div>
       </div>
 

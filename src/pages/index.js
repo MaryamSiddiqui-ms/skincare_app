@@ -3,3 +3,4 @@ export {default as AccessibilitySettings} from './AccessibilitySettings/Accessib
 export {default as SkinTone} from './FilterSettings/ManualSkinTone';
 export {default as SkinConditions} from './FilterSettings/ManualSkinConditions';
 export {default as AutoFilter} from './FilterSettings/AutoFilter';
+export {default as ProductListing} from './ProductListing/ProductListing';

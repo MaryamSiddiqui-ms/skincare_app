@@ -1,0 +1,14 @@
+.img-container{
+    position: relative;
+}
+
+.content-over-image{
+    background-color: #a3b1fa;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+
+}
