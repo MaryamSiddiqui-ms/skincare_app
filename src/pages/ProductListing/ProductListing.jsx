@@ -4,7 +4,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import './product-listing.css'
 import headerImage from '../../assets/1.jpg'
 import anotherImage from '../../assets/home_img.jpg'
-
+import { useNavigate } from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
@@ -16,7 +16,7 @@ import {
 
 
 function ProductListing(props){
-
+    const navigate = useNavigate()
     var cosmetics = [
         [
             'Parkinson Cosmetic',
@@ -52,7 +52,7 @@ function ProductListing(props){
                     
                 </div>
                 <div className='product-icon-container'>
-                    <FilterAltIcon />
+                    <FilterAltIcon onClick={() => navigate('/auto-filter')} />
                     <ShoppingCartOutlinedIcon />
                 </div>
             </div>

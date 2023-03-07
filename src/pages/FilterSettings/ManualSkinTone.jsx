@@ -7,18 +7,22 @@ import RadioGroup from '@mui/material/RadioGroup';
 import {Button} from './../../components';
 import Grid from '@mui/material/Grid';
 import './FilterSettings.css'
+import { useNavigate } from 'react-router-dom'
 
 function ManualSkinTone({ options }) {
-    const [value, setValue] = React.useState('African American');
 
-    const handleChange = (event) => {
-      setValue(event.target.value);
-    };
+  const navigate = useNavigate()
+
+  const [value, setValue] = React.useState('African American');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
   return (
-    <div className="skin-tone-screen" style={{ position: 'relative', height: '100vh' }}>
-      <h1 className="skin-tone-heading">Select Your Skin Type</h1>
-      <FormControl sx={{ padding: '5px 12px'}}>
+    <div className="filter-screen" style={{ position: 'relative', height: '100vh' }}>
+      <p className="filter-heading">Select Your Skin Type</p>
+      <FormControl sx={{ padding: '5px 25px'}}>
 
         <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
         <RadioGroup
@@ -26,7 +30,6 @@ function ManualSkinTone({ options }) {
           name="controlled-radio-buttons-group"
           value={value}
           onChange={handleChange}
-          color="default"
         >
           {options.map((option) => (
             <FormControlLabel
@@ -34,11 +37,16 @@ function ManualSkinTone({ options }) {
               value={option.value}
               control={<Radio />}
               label={option.label}
+              sx={{
+                color: 'gray',
+                paddingTop: '10px',
+                borderBottom: '1px solid rgb(224, 224, 224)'
+              }}
             />
           ))}
         </RadioGroup>
       </FormControl>
-      <div className='setting_BTN' >
+      <div className='setting_BTN' onClick={() =>navigate('/skin-condition')}>
         <Button width="44.5%" txt="Skip" theme='light' variant="contained"/>
         <Button width="44.5%" txt="Apply" theme='dark' variant='contained'/>
       </div>
