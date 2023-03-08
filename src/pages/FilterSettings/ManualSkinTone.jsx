@@ -13,7 +13,7 @@ function ManualSkinTone({ options }) {
 
   const navigate = useNavigate()
 
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState('African American');
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -28,24 +28,22 @@ function ManualSkinTone({ options }) {
 
         <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
         <RadioGroup
-          aria-labelledby="demo-controlled-radio-buttons-group"
-          name="controlled-radio-buttons-group"
+          aria-label="skin-tone"
+          name="skin-tone"
           value={value}
           onChange={handleChange}
-          olor="default"
         >
           {options.map((option) => (
             <FormControlLabel
               key={option.value}
               value={option.value}
-              control={<Radio />}
+              control={<Radio color="default" />}
               label={option.label}
               sx={{
-                color: 'gray',
+                color: 'black',
                 paddingTop: '10px',
                 borderBottom: '1px solid rgb(224, 224, 224)'
               }}
-              checked={option.label === "African American" ? true : false}
             />
           ))}
         </RadioGroup>

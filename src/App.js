@@ -8,33 +8,27 @@ import {
   AutoFilter,
   ProductListing
 } from './pages';
-// import ManualSkinTone from './pages/FilterSettings/ManualSkinTone';
+
+import {
+  companySubtitle,
+  companyTitle,
+  skinToneList,
+  skinType,
+  diseases
+} from './config';
 
 function App() {
-  
-  var skinToneList = [    { label: 'White', value: 'white' },    { label: 'Asian', value: 'asian' },    { label: 'African American', value: 'african-american' },    { label: 'American Indian or Alaska Native', value: 'native-american' },    { label: 'Native Hawaiian or Other Pacific Islander', value: 'pacific-islander' },  ]
-  var skinType = ['White', 'Asian', 'African American', 'American Indian OR Alaska Native', 'Native Hawaiian OR Other Pacific Islander']
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element ={<Home/>} />
+        <Route path="/" element ={<Home title={companyTitle} subtitle={companySubtitle} />} />
         <Route path="/accessibility" element={<AccessibilitySettings />} />
         <Route path="/auto-filter" element={<AutoFilter />} />
         <Route path="/skin-tone" element={<SkinTone options={skinToneList} />} />
-        <Route path='/skin-condition' element={<SkinConditions />} />
+        <Route path='/skin-condition' element={<SkinConditions options={diseases} />} />
         <Route path="/product-listing" element={<ProductListing options={skinType} />} />
       </Routes>
     </BrowserRouter>
-    // <Home/>
-    // <AccessibilitySettings />
-    // <SkinTone
-    // options={[    { label: 'White', value: 'white' },    { label: 'Asian', value: 'asian' },    { label: 'African American', value: 'african-american' },    { label: 'American Indian or Alaska Native', value: 'native-american' },    { label: 'Native Hawaiian or Other Pacific Islander', value: 'pacific-islander' },  ]}
-    // />
-    // <SkinConditions/>
-    // <ProductListing 
-    //   options={skinType}
-    // />
   );
 }
 

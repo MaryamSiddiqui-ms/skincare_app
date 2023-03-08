@@ -22,6 +22,7 @@ import {
 
 function ProductListing(props){
     const navigate = useNavigate()
+
     var cosmetics = [
         [
             'Parkinson Cosmetic',
@@ -40,12 +41,13 @@ function ProductListing(props){
             _1,
             '$7',
             'Lorum Ispum Name',
-        ]
+        ],
     ]
+
 
     const [skinType, setskinType] = React.useState('African American');
 
-    const handleChange = (event: SelectChangeEvent) => {
+    const handleChange = (event) => {
         setskinType(event.target.value);
     };
 
@@ -63,18 +65,19 @@ function ProductListing(props){
             </div>
 
             <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={skinType}
-                onChange={_8}
-            >
-                {
-                    props.options.map(value => {
-                        return(
-                            <MenuItem value={value}>{value}</MenuItem>
-                        )
-                    })
-                }
+         
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={skinType}
+            onChange={handleChange}  // Fix the onChange handler here
+          >
+            {
+              props.options.map(value => {
+                return(
+                  <MenuItem value={value}>{value}</MenuItem>
+                )
+              })
+            }
             </Select>
 
             <h2 style={{marginBottom: '5px'}}>Cosmetic Reccomendation</h2>

@@ -2,22 +2,11 @@ import React, { useState } from "react";
 import { Button } from "../../components";
 import Grid from "@mui/material/Grid";
 import _1 from '../../assets/1.jpg'
-import MButton from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import _2 from '../../assets/9.jpg'
+import _3 from '../../assets/10.jpg'
+import _4 from '../../assets/1.jpg'
 import { useNavigate } from 'react-router-dom';
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
+
 
 function AutoFilter() {
   const navigate = useNavigate();
@@ -25,100 +14,101 @@ function AutoFilter() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false)
-
-  const getFilterParams = () => {
-    return {
-      skinTone: "medium",
-      skinCondition: "acne",
-    };
-  };
-
-  const [filterParams, setFilterParams] = useState(null);
-
-  const handlePickImage = () => {
-    // TODO: Implement image picking/capturing logic
-    setFilterParams(getFilterParams());
-  };
+  const [isFileChosen, setIsFileChosen] = useState(false);
+  const [imgFilter, setImgFilter] = useState(null)
+  const [isImgChosen, setIsImageChosen] = useState(false)
 
   const handleUploadImage = (event) => {
     // TODO: Implement image upload logic
-    setFilterParams(getFilterParams());
+    // setFilterParams(getFilterParams());
+    setImgFilter(event)
+    setIsFileChosen(true)
   };
+  
+  var type, condition
+  function getSkinFilters(img){
+    //TODO:Alogorithm interprets and return
+    type = 'African American'
+    condition = 'Eczema'
+  }
 
   const prePopulatedImages = [
     {
-      src: _1,
-      skinCondition: "normal",
+      src: _1
     },
     {
-      src: "https://i.imgur.com/WzAHU6k.jpg",
-      skinCondition: "dry",
+      src: _2
     },
     {
-      src: "https://i.imgur.com/tckgJfN.jpg",
-      skinCondition: "oily",
+      src: _3
     },
     {
-      src: "https://i.imgur.com/xuvl2U2.jpg",
-      skinCondition: "acne",
+      src: _4
     },
   ];
 
+  
+
   return (
-    <div style={{ position: "relative", height: "100vh" }}>
-      <h1>Automatic Filter Settings</h1>
+    <div className="filter-screen" style={{ position: "relative", height: "100vh" }}>
+       <p className="filter-heading">Auto Filter Settings</p>
       <p>
-        <b>Pick an image to generate product filter parameters:</b>
+        <b>Take a photo of your skin to determine skin condition and type</b>
       </p>
-      <Grid container spacing={2}>
-        <Grid item>
-        <Button onClick={handleOpen} txt="Pick Image" theme="dark" variant="contained" component="span" />
-        </Grid>
-        <Grid item>
-          <label htmlFor="image-upload">
-            <input type="file" id="image-upload" accept="image/*" style={{ display: "none" }} onChange={handleUploadImage} />
-            <Button txt="Upload Image" theme="dark" variant="contained" component="span" />
-          </label>
-        </Grid>
-      </Grid>
+      <div>
+        <label htmlFor="image-upload">
+          <input type="file" id="image-upload" accept="image/*" style={{ display: "block" }} onChange={handleUploadImage} />
+        </label>
+      </div>
+      <div style={{
+        display: isFileChosen ? "block" : "none",
+        padding: '20px 10px',
+        lineHeight: '1.6rem',
+        marginTop: '20px',
+        boxShadow: '1px 2px 7px -2px rgb(0 0 0 / 79%)'
+      
+      }}>
+        {getSkinFilters(imgFilter)}
+        <b>SKIN TYPE</b> : {type}<br />
+        <b>SKIN CONDITION:</b> {condition}
+      <div id='auto-filter-apply' className="manual-btn-container">
+        <div className="setting_BTN" style={{ marginTop: "2rem" }} onClick={() =>navigate('/product-listing')}>
+          <Button  width="87.5%" txt="Apply" theme="dark" variant="contained"/>
+        </div>
+      </div>
+      </div>
+      
       <div style={{ marginTop: "2rem" }}>
-        <p>Or select an image for a specific skin condition:</p>
-        <Grid container spacing={2}>
+        <p><b>Or use one of popular images</b></p>
+        <Grid padding={4} container spacing={2}>
           {prePopulatedImages.map((image) => (
-            <Grid item key={image.src}>
-              <img src={image.src} alt={image.skinCondition} height="150" />
-              <p>{image.skinCondition}</p>
+            <Grid onClick={() => setIsImageChosen(true)} xs={6} item key={image.src} spacing={2}  >
+              <img width="90%" src={image.src} alt="Pre populated image" height="150" />
             </Grid>
           ))}
         </Grid>
       </div>
-      {filterParams && (
-        <div style={{ marginTop: "2rem" }}>
-          <p>Generated filter parameters:</p>
-          <p>Skin Tone: {filterParams.skinTone}</p>
-          <p>Skin Condition: {filterParams.skinCondition}</p>
+      <div style={{
+        display: isImgChosen ? "block" : "none",
+        padding: '20px 10px',
+        lineHeight: '1.6rem',
+        marginTop: '20px',
+        boxShadow: '1px 2px 7px -2px rgb(0 0 0 / 79%)'
+      
+      }}>
+        {getSkinFilters(imgFilter)}
+        <b>SKIN TYPE</b> : {type}<br />
+        <b>SKIN CONDITION:</b> {condition}
+      <div id='auto-filter-apply' className="manual-btn-container">
+        <div className="setting_BTN" style={{ marginTop: "2rem" }} onClick={() =>navigate('/product-listing')}>
+          <Button  width="87.5%" txt="Apply" theme="dark" variant="contained"/>
         </div>
-      )}
-       <div>
-       <MButton onClick={handleOpen}>Open modal</MButton>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-      </Modal>
-    </div>
-      <div style={{ marginTop: "2rem" }} onClick={() =>navigate('/skin-tone')}>
-        <Button txt="Set Manual Filter" theme="dark" variant="contained" onClick={() => console.log("Go to screen 4")} />
+      </div>
+      </div>
+      <div className="manual-btn-container">
+        <div className="setting_BTN" style={{ marginTop: "2rem" }} onClick={() =>navigate('/skin-tone')}>
+          <Button  width="87.5%" txt="Manually set skin condition and type" theme="dark" variant="contained"/>
+        </div>
       </div>
     </div>
   );

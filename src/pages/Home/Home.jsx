@@ -20,10 +20,8 @@ const countries = [
 ];
 
 
-function Home() {
+function Home(props) {
   const navigate = useNavigate()
-  const [companyTitle, setCompanyTitle] = useState('T E S T'); // Set default company title
-  const [companySubTitle, setCompanySubTitle] = useState('C O M P A N I E S'); // Set default company title
   const [country, setCountry] = useState('USD');
 
   return (
@@ -35,20 +33,20 @@ function Home() {
             
             fontWeight: 'bold', 
             color: '#003471',
-          }} className='compnay-title-heading'>{companyTitle}</p>
+          }} className='compnay-title-heading'>{props.title}</p>
           <p style={
             {margin: 0, padding: 0, 
             
             fontWeight: 'bold', 
             color: '#003471'
-          }} className='compnay-title-heading'>{companyTitle}</p>
+          }} className='compnay-title-heading'>{props.title}</p>
           <p style={{
             margin: 0, 
             padding: 0, 
             color: '#003471',
             
             fontSize: '1.3rem'
-          }} className='compnay-title-heading'>{companySubTitle}</p>
+          }} className='compnay-title-heading'>{props.subtitle}</p>
         </div>
       </div>
       <div className="bottom-section">
